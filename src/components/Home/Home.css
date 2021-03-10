@@ -1,35 +1,41 @@
-/* .football-team{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    justify-content: center;
-    grid-gap: 5px;
-} */
+.football-team-container {
+  background-color: violet;
+}
 
+.football-team{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 30px;
+}
+.team-headline {
+  background: url(../Images/ground-9.jpg);
+  background-size: cover;
+  height: 50vh;
+  text-align: center;
+  display: grid;
+  color: white;
+  grid-template-columns:repeat(1, 1fr);
+  align-items: center;
+  margin-bottom: 20px;
+}
+/* Responsive  */
 @media only screen and (min-width: 500px) {
     .football-team {
-      display: grid;
       grid-template-columns: repeat(1, 1fr);
-      justify-content: center;
-      grid-gap: 5px;
       width: 100%;
     }
-  
   }
 
 @media only screen and (min-width: 768px) {
     .football-team {
-      display: grid;
       grid-template-columns: repeat(2, 1fr);
-      justify-content: center;
-      grid-gap: 5px
+      width: 100%;
     }
   }
   @media only screen and (min-width: 1100px) {
     .football-team {
-      display: grid;
       grid-template-columns: repeat(3, 1fr);
-      justify-content: center;
-      grid-gap: 5px
+      width: 100%;
     }
-    
   }

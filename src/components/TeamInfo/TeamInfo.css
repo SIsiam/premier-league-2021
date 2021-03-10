@@ -1,0 +1,116 @@
+.team-images {
+    width: 100%;
+    margin-bottom: 10px;
+    opacity: 0.9;
+    text-align: center;
+    background: url(../Images/Playground.jpg);
+    background-size: cover;
+}
+.team-info {
+    background-color: rgb(56, 56, 255);
+    color: white;
+    padding:10px;
+}
+.team-details{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 20px;
+    border-radius: 30px;
+    text-align: center;
+    margin: auto;
+    padding: 15px;
+    width: 80%;
+}
+.team-discirption {
+    margin:  15px auto;
+    width: 80%;
+    text-align:justify;
+    padding: 10px;
+    color: white;
+}
+.social-icon  {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+}
+.social-icon>p  {
+    width: 70px;
+}
+.social-icon a {
+    /* color: rgb(255, 96, 96); */
+    font-size: 35px;
+}
+
+/* css query for Responsive */
+/* Mobile  */
+@media only screen and (min-width: 280px) {
+    /* banner  */
+    .team-images img {
+        border-radius: 10px;
+        width: 50%;
+    }
+    /* Team details  */
+    .team-details {
+      grid-template-columns: repeat(1, 1fr);
+      background-color: turquoise;
+      font-size: 0.8em;
+    }
+    .team-details img {
+        width: 450px;
+    }
+
+    .team-discirption {
+    font-size: 1em;
+    line-height: 27px;
+    color: white;
+
+    }
+}
+
+/* Ipad  */
+@media only screen and (min-width: 768px) {
+    .team-images img {
+        border-radius: 20px;
+        width: 40%;
+    }
+    .team-details {
+      grid-template-columns: repeat(1, 1fr);
+      background-color: rgb(224, 64, 171);
+      font-size: 1.4em;
+    }
+    .team-details img {
+        width: 500px;
+    }
+    
+    .team-discirption {
+        font-size: 1.2em;
+        line-height: 35px;
+        color: white;
+    }
+}
+  /* Dextop And Laptop  */
+  
+  @media only screen and (min-width: 1025px) {
+    .team-images img {
+        border-radius: 20px;
+        width: 50%;
+    }
+
+    .team-details {
+      grid-template-columns: repeat(2, 1fr);
+      background-color: rgb(69, 224, 64);
+      font-size: 1.4em;
+}
+    .team-details img {
+        width: 700px;
+    }
+
+    .team-discirption {
+        font-size: 1.5em;
+        line-height: 40px;
+        color: white;
+
+    }
+  }

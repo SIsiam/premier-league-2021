@@ -1,6 +1,6 @@
 import './App.css';
 import Home from './components/Home/Home';
-import { Images } from "./Images/Footbal-ground.jpg";
+// import { Images } from "./Images/Footbal-ground.jpg";
 import {
   BrowserRouter as Router,
   Switch,

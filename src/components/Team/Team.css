@@ -1,9 +1,24 @@
-/* .every-team {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-justify-content: center;
-text-align: center;
-margin: auto;
-padding: 10px;
-grid-gap: 5px;  
-} */
+.every-team{
+    text-align: center;
+}
+
+.link-btn{
+    text-align: center;
+    margin: 0 80px;
+}
+.link-style {
+    text-decoration: none;
+    color: black;
+}
+.link-style:hover {
+    text-decoration: none;
+    color: black;
+}
+
+@media only screen and (max-width: 380px) {
+    .link-btn{
+        width: 100%;
+        text-align: center;
+        margin: 0 40px;
+    }
+}

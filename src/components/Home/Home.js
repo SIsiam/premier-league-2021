@@ -12,10 +12,17 @@ const Home = () => {
             .then(data => setTeams(data.teams))
     }, [])
     return (
-        <div className="football-team">
-            {
-                teams.map(team => <Team team={team} ></Team> )
-            }
+        <div className="football">
+            <div className="team-headline">
+                <h1>English Premier League</h1>
+            </div>
+            <section className="football-team-container">
+                <div className="football-team container">
+                    {
+                        teams.map(team => <Team team={team} ></Team>)
+                    }
+                </div>
+            </section>
         </div>
     );
 };
