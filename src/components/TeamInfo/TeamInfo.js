@@ -13,7 +13,7 @@ const TeamInfo = (props) => {
         fetch(url)
             .then(respo => respo.json())
             .then(data => setTeam(data.teams[0]))
-    }, []);
+    }, [teamInfo]);
 
     const { strDescriptionEN, strTeamLogo, strGender, strCountry, strDescriptionPT, strSport, strLeague, strInstagram, } = team;
 
