@@ -1,0 +1,9 @@
+/* .every-team {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+justify-content: center;
+text-align: center;
+margin: auto;
+padding: 10px;
+grid-gap: 5px;  
+} */
