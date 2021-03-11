@@ -7,7 +7,6 @@ import imagesGirl from "../Images/female.png";
 // Font Awsome 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter, faYoutube, faFacebook, faFontAwesomeFlag, faCreativeCommons, faUnity, faSteamSymbol, faInstagram } from '@fortawesome/free-brands-svg-icons';
-import SocialLink from '../SocialLInk/SocialLink';
 
 const TeamInfo = (props) => {
     let { teamId } = useParams();
