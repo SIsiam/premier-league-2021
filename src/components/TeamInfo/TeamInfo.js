@@ -1,22 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import './TeamInfo.css'
+// Conditionl rendaring Imges
 import imagesBoy from "../Images/male.png";
 import imagesGirl from "../Images/female.png";
-import './TeamInfo.css'
+// Font Awsome 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTwitter, faYoutube, faFacebook } from '@fortawesome/free-brands-svg-icons';
+import { faTwitter, faYoutube, faFacebook, faFontAwesomeFlag, faCreativeCommons, faUnity, faSteamSymbol, faInstagram } from '@fortawesome/free-brands-svg-icons';
+
 const TeamInfo = (props) => {
-    let { teamInfo } = useParams();
+    let { teamId } = useParams();
+
     const [team, setTeam] = useState({});
     useEffect(() => {
-        const url = `https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?id=${teamInfo}`
+        const url = `https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?id=${teamId}`
         fetch(url)
             .then(respo => respo.json())
             .then(data => setTeam(data.teams[0]))
-    }, [teamInfo]);
+    }, [teamId]);
 
-    const { strDescriptionEN, strTeamLogo, strGender, strCountry, strDescriptionPT, strSport, strLeague, strInstagram, } = team;
-
+    // distructuring 
+    const { strDescriptionEN, strTeamLogo, strGender, strCountry, intFormedYear, strDescriptionPT, strSport, strLeague, strInstagram, strYoutube, strTwitter, strFacebook, strStadiumThumb, strTeamFanart1, strTeam } = team;
 
     // Conditional Rendaring For Male And Female : 
     let ShowTeamPicture;
@@ -43,19 +47,30 @@ const TeamInfo = (props) => {
             </div>
 
 
-            <section className="team-info">
-
+            <section className="team-info-container">
 
                 <div className="team-details">
                     <div>
                         <p>{strLeague}</p>
-                        <p>Country: {strCountry}</p>
-                        <p>Sport Type : {strSport}</p>
-                        <p>Gender: {strGender}</p>
+                        <p><FontAwesomeIcon icon={faCreativeCommons} /> Journey: {intFormedYear}</p>
+                        <p><FontAwesomeIcon icon={faFontAwesomeFlag} /> Country: {strCountry}</p>
+                        <p><FontAwesomeIcon icon={faUnity} />Sport Type: {strSport}</p>
+                        <p><FontAwesomeIcon icon={faSteamSymbol} /> Gender: {strGender}</p>
                     </div>
 
                     <div>
                         {ShowTeamPicture}
+                    </div>
+                </div>
+
+                <div className="team-stadium-logo">
+                    <div>
+                        <h4> Logo : {strTeam}</h4>
+                        <img src={strTeamFanart1} alt="" />
+                    </div>
+                    <div>
+                        <h4> Stadium : {strTeam}</h4>
+                        <img src={strStadiumThumb} alt="" />
                     </div>
                 </div>
 
@@ -69,22 +84,23 @@ const TeamInfo = (props) => {
                     </div>
 
                 </div>
+
                 <div className="social-icon container">
-
-                    <p> <a href={strInstagram}> <FontAwesomeIcon icon={faTwitter} /> </a> 
+                    <p className="twitter-Icon">
+                        <a href={strTwitter}> <FontAwesomeIcon icon={faTwitter} /> </a>
                     </p>
-                    <p>
-                        <a href={strInstagram}> <FontAwesomeIcon icon={faFacebook} /> </a>
+                    <p className="facebook-Icon">
+                        <a href={strFacebook}> <FontAwesomeIcon icon={faFacebook} /> </a>
                     </p>
-                    <p>
-                        <a href={strInstagram}> <FontAwesomeIcon icon={faYoutube} /> </a>
+                    <p className="youtube-Icon">
+                        <a href={strYoutube}> <FontAwesomeIcon icon={faYoutube} /> </a>
                     </p>
-
+                    <p className="instragram-Icon">
+                        <a href={strInstagram}> <FontAwesomeIcon icon={faInstagram} /> </a>
+                    </p>
                 </div>
 
             </section>
-
-
 
         </section>
     );

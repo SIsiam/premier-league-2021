@@ -23,7 +23,7 @@ function App() {
           <Home />
         </Route>
 
-        <Route path="/team/:teamInfo">
+        <Route path="/team/:teamId">
           <TeamInfo />
         </Route>
 

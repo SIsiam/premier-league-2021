@@ -1,7 +1,9 @@
 import React from 'react';
+// React Router  
 import { Link } from 'react-router-dom';
 // import { useHistory } from 'react-router-dom';
 import '../Team/Team.css'
+// Meteriul ui 
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -10,25 +12,29 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import "../Team/Team.css";
+// Font Awsome  
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocationArrow } from '@fortawesome/free-solid-svg-icons'
 
 const useStyles = makeStyles({
     root: {
-        maxWidth: 345,
+        maxWidth: 445,
+        borderRadius:20,
     },
     media: {
-        height: 300,
+        height: 200,
+        width:320,
         borderRadius: 10,
-        margin: 20,
+        marginTop:20,
+        margin: "auto",
         padding: 20,
     },
 });
 const Team = (props) => {
-    console.log(props.team);
-    const { strTeam, strTeamBadge, idTeam } = props.team;
-    // Another Way Try 
+    // distructuring 
+    const { strTeam, strTeamBadge, idTeam, strSport } = props.team;
+
+    // Another Way Try click To Route Path
     /* 
     const history = useHistory();
     const handleClick = (teamInfo) => {
@@ -50,12 +56,15 @@ const Team = (props) => {
                         <Typography gutterBottom variant="h5" component="h4">
                             {strTeam}
                         </Typography>
+                        <Typography gutterBottom variant="h5" component="h4">
+                            <h3>Sports types : {strSport} </h3> 
+                        </Typography>
                     </CardContent>
                 </CardActionArea>
 
                 <CardActions className="link-btn">
 
-                    <Button size="small" variant="outlined" color="secondary">
+                    <Button size="small">
                         <Link className="link-style" to={`/team/${idTeam}`}>  Explore More  <FontAwesomeIcon icon={faLocationArrow} /></Link>
                     </Button>
 

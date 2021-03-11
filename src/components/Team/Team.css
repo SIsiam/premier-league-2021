@@ -4,21 +4,29 @@
 
 .link-btn{
     text-align: center;
-    margin: 0 80px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    background-image: linear-gradient(to top, #df89b5 0%, #bfd9fe 100%);
+    color: white;
 }
+
 .link-style {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 114px;
+    padding: 8px 17px;
+    background-color: #fff;
+    border-radius: 8px;
+    border: 2px solid rgb(255, 255, 255);
     text-decoration: none;
-    color: black;
+    transition: border-color .2s ease, background-color .2s ease;
+    z-index: 10;
 }
 .link-style:hover {
     text-decoration: none;
-    color: black;
-}
+    background-color: transparent;
+    color: #fff;
 
-@media only screen and (max-width: 380px) {
-    .link-btn{
-        width: 100%;
-        text-align: center;
-        margin: 0 40px;
-    }
 }

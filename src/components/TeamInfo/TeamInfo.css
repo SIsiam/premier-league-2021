@@ -1,13 +1,13 @@
 .team-images {
-    width: 100%;
-    margin-bottom: 10px;
-    opacity: 0.9;
     text-align: center;
+    width: 100%;
+    margin-bottom: 14px;
+    opacity: 0.8;
     background: url(../Images/Playground.jpg);
     background-size: cover;
 }
-.team-info {
-    background-color: rgb(56, 56, 255);
+.team-info-container {
+    background-image: linear-gradient(to top, #df89b5 0%, #bfd9fe 100%);    border-radius: 20px;
     color: white;
     padding:10px;
 }
@@ -22,25 +22,58 @@
     padding: 15px;
     width: 80%;
 }
+.team-stadium-logo{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    grid-gap: 10px;
+    margin: 10px;
+    padding: 10px;
+    color: rgb(255, 56, 30);
+}
+.team-stadium-logo img {
+    width: 80%;
+    border-radius: 25px;
+}
 .team-discirption {
     margin:  15px auto;
     width: 80%;
     text-align:justify;
     padding: 10px;
-    color: white;
+    color: black;
+    text-shadow: 2px 2px 3px rgb(228, 184, 118);
 }
+/* social icon style and hover  effect */
 .social-icon  {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    text-align: center;
+    align-items: center;
 }
 .social-icon>p  {
-    width: 70px;
+    width: 60px;
 }
 .social-icon a {
-    /* color: rgb(255, 96, 96); */
     font-size: 35px;
+    padding: 15px;
+}
+.twitter-Icon:hover {
+    background-color: rgb(222, 238, 0) ;
+    border-radius: 5px;
+}
+.facebook-Icon:hover {
+    background-color: #b25842;
+    border-radius: 5px;
+}
+.youtube-Icon:hover {
+    background-color: rgb(43, 250, 95);
+    border-radius: 5px;
+}
+.instragram-Icon:hover {
+    background-color: #fbad50	;
+    border-radius: 5px;
 }
 
 /* css query for Responsive */
@@ -54,18 +87,19 @@
     /* Team details  */
     .team-details {
       grid-template-columns: repeat(1, 1fr);
-      background-color: turquoise;
-      font-size: 0.8em;
+      background-image: linear-gradient(-20deg, #6e45e2 0%, #88d3ce 100%);
+    font-size: 1em;
     }
     .team-details img {
         width: 450px;
     }
+    .team-stadium-logo {
+        grid-template-columns: repeat(1, 1fr);
+    }
 
     .team-discirption {
-    font-size: 1em;
+    font-size: 0.9em;
     line-height: 27px;
-    color: white;
-
     }
 }
 
@@ -83,11 +117,13 @@
     .team-details img {
         width: 500px;
     }
+    .team-stadium-logo {
+        grid-template-columns: repeat(2, 1fr);
+    }
     
     .team-discirption {
-        font-size: 1.2em;
+        font-size: 1.1em;
         line-height: 35px;
-        color: white;
     }
 }
   /* Dextop And Laptop  */
@@ -101,16 +137,17 @@
     .team-details {
       grid-template-columns: repeat(2, 1fr);
       background-color: rgb(69, 224, 64);
-      font-size: 1.4em;
+      font-size: 1.6em;
 }
     .team-details img {
         width: 700px;
     }
+    .team-stadium-logo {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
     .team-discirption {
-        font-size: 1.5em;
+        font-size: 1.3em;
         line-height: 40px;
-        color: white;
-
     }
   }
