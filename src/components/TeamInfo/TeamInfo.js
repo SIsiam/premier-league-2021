@@ -7,6 +7,7 @@ import imagesGirl from "../Images/female.png";
 // Font Awsome 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter, faYoutube, faFacebook, faFontAwesomeFlag, faCreativeCommons, faUnity, faSteamSymbol, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import SocialLink from '../SocialLInk/SocialLink';
 
 const TeamInfo = (props) => {
     let { teamId } = useParams();
@@ -16,8 +17,10 @@ const TeamInfo = (props) => {
         const url = `https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?id=${teamId}`
         fetch(url)
             .then(respo => respo.json())
-            .then(data => setTeam(data.teams[0]))
+            .then(data => setTeam(data.teams[0])) 
+            
     }, [teamId]);
+
 
     // distructuring 
     const { strDescriptionEN, strTeamLogo, strGender, strCountry, intFormedYear, strDescriptionPT, strSport, strLeague, strInstagram, strYoutube, strTwitter, strFacebook, strStadiumThumb, strTeamFanart1, strTeam } = team;
@@ -45,7 +48,6 @@ const TeamInfo = (props) => {
             <div className="team-images">
                 <img className="img-fluid" src={strTeamLogo} alt="" />
             </div>
-
 
             <section className="team-info-container">
 
@@ -85,22 +87,22 @@ const TeamInfo = (props) => {
 
                 </div>
 
+            </section>
+
                 <div className="social-icon container">
                     <p className="twitter-Icon">
-                        <a href={strTwitter}> <FontAwesomeIcon icon={faTwitter} /> </a>
+                        <a href={`https://${strTwitter}`}> <FontAwesomeIcon icon={faTwitter} /> </a>
                     </p>
                     <p className="facebook-Icon">
-                        <a href={strFacebook}> <FontAwesomeIcon icon={faFacebook} /> </a>
+                        <a href={`https://${strFacebook}`}> <FontAwesomeIcon icon={faFacebook} /> </a>
                     </p>
                     <p className="youtube-Icon">
-                        <a href={strYoutube}> <FontAwesomeIcon icon={faYoutube} /> </a>
+                        <a href={`https://${strYoutube}`}> <FontAwesomeIcon icon={faYoutube} /> </a>
                     </p>
                     <p className="instragram-Icon">
-                        <a href={strInstagram}> <FontAwesomeIcon icon={faInstagram} /> </a>
+                        <a href={`https://${strInstagram}`}> <FontAwesomeIcon icon={faInstagram} /> </a>
                     </p>
                 </div>
-
-            </section>
 
         </section>
     );
